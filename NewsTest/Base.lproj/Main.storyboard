@@ -206,6 +206,7 @@
                                 <state key="normal" title="Reset Password"/>
                                 <connections>
                                     <action selector="didTapResetPassword:" destination="Vcn-Ug-PqV" eventType="touchUpInside" id="qem-lZ-5AQ"/>
+                                    <segue destination="JTQ-n7-yv3" kind="show" id="Aee-IS-q0N"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -241,6 +242,87 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zmg-ek-36T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1948.854961832061" y="-744.36619718309862"/>
+        </scene>
+        <!--Reset Password-->
+        <scene sceneID="bLz-bx-lbM">
+            <objects>
+                <viewController storyboardIdentifier="ResetPasswordViewController" id="JTQ-n7-yv3" customClass="ResetPasswordViewController" customModule="NewsTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4PT-3c-LLj">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q86-0i-IeL" customClass="CustomTextField" customModule="NewsTest" customModuleProvider="target">
+                                <rect key="frame" x="38" y="133" width="318" height="44"/>
+                                <color key="backgroundColor" name="TextField"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Zur-T0-QdT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" textContentType="email"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="paddingValue">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cdj-Ng-haG">
+                                <rect key="frame" x="88" y="197" width="218" height="42"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="53y-ew-sLH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <color key="tintColor" name="AccentColor"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Reset password">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="didTapButton:" destination="Vcn-Ug-PqV" eventType="touchUpInside" id="21M-MK-8wT"/>
+                                    <action selector="didTapReset:" destination="JTQ-n7-yv3" eventType="touchUpInside" id="UFa-2k-iVw"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instructions on setting a new password will be emailed to you" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x1Z-nM-AXK">
+                                <rect key="frame" x="33" y="259" width="328" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="cty-Uh-dx7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="EEe-1O-7hC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Q86-0i-IeL" firstAttribute="top" secondItem="EEe-1O-7hC" secondAttribute="top" constant="30" id="Dih-Gr-4FV"/>
+                            <constraint firstItem="Q86-0i-IeL" firstAttribute="leading" secondItem="EEe-1O-7hC" secondAttribute="leading" constant="38" id="LL3-et-T2Z"/>
+                            <constraint firstItem="x1Z-nM-AXK" firstAttribute="top" secondItem="Cdj-Ng-haG" secondAttribute="bottom" constant="20" id="N5m-ER-6ky"/>
+                            <constraint firstItem="Cdj-Ng-haG" firstAttribute="leading" secondItem="EEe-1O-7hC" secondAttribute="leading" constant="88" id="Rc0-YJ-f2f"/>
+                            <constraint firstItem="Cdj-Ng-haG" firstAttribute="top" secondItem="Q86-0i-IeL" secondAttribute="bottom" constant="20" id="c1A-v1-BOj"/>
+                            <constraint firstItem="EEe-1O-7hC" firstAttribute="trailing" secondItem="Q86-0i-IeL" secondAttribute="trailing" constant="37" id="e0G-2o-jJd"/>
+                            <constraint firstItem="EEe-1O-7hC" firstAttribute="trailing" secondItem="x1Z-nM-AXK" secondAttribute="trailing" constant="32" id="fPV-FT-J2P"/>
+                            <constraint firstItem="x1Z-nM-AXK" firstAttribute="leading" secondItem="EEe-1O-7hC" secondAttribute="leading" constant="33" id="mcB-5r-LJ3"/>
+                            <constraint firstItem="EEe-1O-7hC" firstAttribute="trailing" secondItem="Cdj-Ng-haG" secondAttribute="trailing" constant="87" id="rUa-35-GOB"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Reset Password" largeTitleDisplayMode="never" id="RxT-xu-eha"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="Q86-0i-IeL" id="fJs-2t-12Q"/>
+                        <outlet property="resetButton" destination="Cdj-Ng-haG" id="Ihw-hR-v5r"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QL5-Cd-lBW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2872.5190839694656" y="-744.36619718309862"/>
         </scene>
         <!--News-->
         <scene sceneID="5yD-DF-4Hw">
