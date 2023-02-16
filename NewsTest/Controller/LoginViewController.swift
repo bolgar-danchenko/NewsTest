@@ -25,7 +25,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -64,18 +64,13 @@ class LoginViewController: UIViewController {
             return
         }
         
-        let user = User(email: email)
-        
         if !isSignUp {
             FirebaseManager.shared.login(email: email, password: password) {
-                
-                let vc = ProfileViewController(user: user)
-                self.navigationController?.setViewControllers([vc], animated: true)
+                self.dismiss(animated: true)
             }
         } else {
             FirebaseManager.shared.signUp(email: email, password: password) {
-                let vc = ProfileViewController(user: user)
-                self.navigationController?.setViewControllers([vc], animated: true)
+                self.dismiss(animated: true)
             }
         }
     }
@@ -83,4 +78,5 @@ class LoginViewController: UIViewController {
     @IBAction func didTapSignUpButton(_ sender: UIButton) {
         isSignUp.toggle()
     }
+    
 }

@@ -21,7 +21,7 @@ class AlertModel {
 
     func showTwoActionAlert(title: String, message: String, okAction: String, cancelAction: String, handler: ((UIAlertAction) -> Void)?) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: okAction, style: .default, handler: handler)
+        let okAction = UIAlertAction(title: okAction, style: .destructive, handler: handler)
         let cancelAction = UIAlertAction(title: cancelAction, style: .cancel)
         alert.addAction(okAction)
         alert.addAction(cancelAction)

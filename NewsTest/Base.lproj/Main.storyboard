@@ -94,7 +94,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="U6e-2D-GKU">
             <objects>
-                <tabBarController storyboardIdentifier="TabBarController" automaticallyAdjustsScrollViewInsets="NO" id="FFg-f4-emV" customClass="TabBarController" customModule="NewsTest" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" automaticallyAdjustsScrollViewInsets="NO" id="FFg-f4-emV" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="XdE-ls-YiA"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JbZ-51-m9g">
@@ -205,8 +205,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Reset Password"/>
                                 <connections>
-                                    <action selector="didTapResetPassword:" destination="Vcn-Ug-PqV" eventType="touchUpInside" id="qem-lZ-5AQ"/>
-                                    <segue destination="JTQ-n7-yv3" kind="show" id="Aee-IS-q0N"/>
+                                    <segue destination="JTQ-n7-yv3" kind="show" id="fug-Mu-IvV"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -234,7 +233,7 @@
                         <outlet property="emailField" destination="5pd-zI-nDI" id="PWL-Zl-sff"/>
                         <outlet property="loginButton" destination="dEN-1O-MXO" id="lZm-NP-MYg"/>
                         <outlet property="passwordField" destination="PMN-YE-48U" id="ZCX-YL-rAZ"/>
-                        <outlet property="resetPasswordButton" destination="jFK-9E-7Co" id="zHh-r5-QI7"/>
+                        <outlet property="resetPasswordButton" destination="jFK-9E-7Co" id="vyK-vv-D5h"/>
                         <outlet property="signUpButton" destination="GsV-9e-ozb" id="W4P-PL-wLb"/>
                         <outlet property="signUpLabel" destination="Mta-2P-ZDN" id="Ohx-Mq-l1V"/>
                     </connections>

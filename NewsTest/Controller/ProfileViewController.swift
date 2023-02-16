@@ -9,12 +9,9 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
-    var user: User = User(email: "")
+    static var isLoggedIn = false
     
-    convenience init(user: User) {
-        self.init()
-        self.user = user
-    }
+    // MARK: - Subviews
     
     private lazy var profileImage: UIImageView = {
         let imageView = UIImageView()
@@ -56,9 +53,16 @@ class ProfileViewController: UIViewController {
         return button
     }()
     
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(named: "Background")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         configure()
     }
     
@@ -91,13 +95,27 @@ class ProfileViewController: UIViewController {
         ])
     }
     
+    // MARK: - Private
+    
     private func configure() {
-        nameLabel.text = user.name
-        emailLabel.text = user.email
+        if let user = FirebaseManager.shared.user {
+            nameLabel.text = user.name
+            emailLabel.text = user.email
+        }
     }
     
     @objc private func didTapSignOut() {
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController")
-        self.navigationController?.setViewControllers([vc], animated: true)
+        AlertModel.shared.showTwoActionAlert(title: "Sign Out", message: "Are you sure you want to sign out?", okAction: "Sign Out", cancelAction: "Cancel") { [weak self] _ in
+            self?.signOut()
+        }
+    }
+    
+    private func signOut() {
+        FirebaseManager.shared.signOut()
+        
+        let vc = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "LoginViewController")
+        let nav = UINavigationController(rootViewController: vc)
+        nav.modalPresentationStyle = .fullScreen
+        present(nav, animated: true)
     }
 }
