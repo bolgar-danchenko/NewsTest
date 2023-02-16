@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,7 +13,7 @@
         <!--News-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NewsTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewsViewController" id="BYZ-38-t0r" customClass="NewsViewController" customModule="NewsTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -28,23 +29,38 @@
         <!--Map-->
         <scene sceneID="vG9-8q-fpC">
             <objects>
-                <viewController id="tBZ-qb-bxP" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapViewController" id="tBZ-qb-bxP" customClass="MapViewController" customModule="NewsTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rA0-ne-lXs">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xcY-sm-qDZ">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="769"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="xzH-05-Wwn"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xzH-05-Wwn" firstAttribute="bottom" secondItem="xcY-sm-qDZ" secondAttribute="bottom" id="EJk-wm-PTx"/>
+                            <constraint firstItem="xcY-sm-qDZ" firstAttribute="leading" secondItem="xzH-05-Wwn" secondAttribute="leading" id="KxG-bY-ENm"/>
+                            <constraint firstItem="xzH-05-Wwn" firstAttribute="top" secondItem="xcY-sm-qDZ" secondAttribute="top" constant="59" id="Tz2-Cr-qMp"/>
+                            <constraint firstItem="xzH-05-Wwn" firstAttribute="trailing" secondItem="xcY-sm-qDZ" secondAttribute="trailing" id="haE-bO-siL"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="MapTab" id="RrP-9g-UwI"/>
+                    <connections>
+                        <outlet property="mapView" destination="xcY-sm-qDZ" id="cy7-v1-7vA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gQ0-EO-qKa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1776" y="4"/>
+            <point key="canvasLocation" x="1774.8091603053435" y="3.5211267605633805"/>
         </scene>
         <!--Favorites-->
         <scene sceneID="xfK-lG-Oro">
             <objects>
-                <viewController id="mRS-Sp-lKw" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FavoritesViewController" id="mRS-Sp-lKw" customClass="FavoritesViewController" customModule="NewsTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Maw-UU-cG5">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -60,7 +76,7 @@
         <!--Profile-->
         <scene sceneID="KQH-e9-ZSe">
             <objects>
-                <viewController id="STc-bA-vXN" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileViewController" id="STc-bA-vXN" customClass="ProfileViewController" customModule="NewsTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pCb-79-XiP">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -80,7 +96,7 @@
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JbZ-51-m9g">
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="7aY-l2-rO9"/>

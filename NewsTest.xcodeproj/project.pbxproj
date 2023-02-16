@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B588C0A7299E33AB00D16215 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B588C0A6299E33AB00D16215 /* MapViewController.swift */; };
+		B588C0A9299E33C500D16215 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B588C0A8299E33C500D16215 /* FavoritesViewController.swift */; };
+		B588C0AB299E33CF00D16215 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B588C0AA299E33CF00D16215 /* ProfileViewController.swift */; };
+		B588C0AE299E386E00D16215 /* CustomAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B588C0AD299E386E00D16215 /* CustomAnnotation.swift */; };
 		B5F3255E299E184C00420CD5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F3255D299E184C00420CD5 /* AppDelegate.swift */; };
 		B5F32560299E184C00420CD5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F3255F299E184C00420CD5 /* SceneDelegate.swift */; };
-		B5F32562299E184C00420CD5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F32561299E184C00420CD5 /* ViewController.swift */; };
+		B5F32562299E184C00420CD5 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F32561299E184C00420CD5 /* NewsViewController.swift */; };
 		B5F32565299E184C00420CD5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5F32563299E184C00420CD5 /* Main.storyboard */; };
 		B5F32568299E184C00420CD5 /* NewsTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B5F32566299E184C00420CD5 /* NewsTest.xcdatamodeld */; };
 		B5F3256A299E184D00420CD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5F32569299E184D00420CD5 /* Assets.xcassets */; };
@@ -17,10 +21,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B588C0A6299E33AB00D16215 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		B588C0A8299E33C500D16215 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		B588C0AA299E33CF00D16215 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		B588C0AD299E386E00D16215 /* CustomAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotation.swift; sourceTree = "<group>"; };
 		B5F3255A299E184C00420CD5 /* NewsTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F3255D299E184C00420CD5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5F3255F299E184C00420CD5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B5F32561299E184C00420CD5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B5F32561299E184C00420CD5 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		B5F32564299E184C00420CD5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B5F32567299E184C00420CD5 /* NewsTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NewsTest.xcdatamodel; sourceTree = "<group>"; };
 		B5F32569299E184D00420CD5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -39,6 +47,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B588C0AC299E385100D16215 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B588C0AD299E386E00D16215 /* CustomAnnotation.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B588C0AF299E398900D16215 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B5F32561299E184C00420CD5 /* NewsViewController.swift */,
+				B588C0A6299E33AB00D16215 /* MapViewController.swift */,
+				B588C0A8299E33C500D16215 /* FavoritesViewController.swift */,
+				B588C0AA299E33CF00D16215 /* ProfileViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B588C0B0299E399300D16215 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		B5F32551299E184C00420CD5 = {
 			isa = PBXGroup;
 			children = (
@@ -60,10 +94,12 @@
 			children = (
 				B5F3255D299E184C00420CD5 /* AppDelegate.swift */,
 				B5F3255F299E184C00420CD5 /* SceneDelegate.swift */,
-				B5F32561299E184C00420CD5 /* ViewController.swift */,
+				B588C0AC299E385100D16215 /* Model */,
+				B588C0B0299E399300D16215 /* View */,
+				B588C0AF299E398900D16215 /* Controller */,
 				B5F32563299E184C00420CD5 /* Main.storyboard */,
-				B5F32569299E184D00420CD5 /* Assets.xcassets */,
 				B5F3256B299E184D00420CD5 /* LaunchScreen.storyboard */,
+				B5F32569299E184D00420CD5 /* Assets.xcassets */,
 				B5F3256E299E184D00420CD5 /* Info.plist */,
 				B5F32566299E184C00420CD5 /* NewsTest.xcdatamodeld */,
 			);
@@ -141,10 +177,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5F32562299E184C00420CD5 /* ViewController.swift in Sources */,
+				B5F32562299E184C00420CD5 /* NewsViewController.swift in Sources */,
 				B5F3255E299E184C00420CD5 /* AppDelegate.swift in Sources */,
 				B5F32568299E184C00420CD5 /* NewsTest.xcdatamodeld in Sources */,
+				B588C0A7299E33AB00D16215 /* MapViewController.swift in Sources */,
+				B588C0AB299E33CF00D16215 /* ProfileViewController.swift in Sources */,
+				B588C0A9299E33C500D16215 /* FavoritesViewController.swift in Sources */,
 				B5F32560299E184C00420CD5 /* SceneDelegate.swift in Sources */,
+				B588C0AE299E386E00D16215 /* CustomAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
