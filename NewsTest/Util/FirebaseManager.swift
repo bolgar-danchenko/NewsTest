@@ -26,6 +26,7 @@ class FirebaseManager {
         auth.createUser(withEmail: email, password: password) { [weak self] result, error in
             if let error {
                 AlertModel.shared.showOkActionAlert(title: "Error", message: error.localizedDescription)
+                return
             }
             self?.isLoggedIn = true
             self?.user = User(email: email)
@@ -37,6 +38,7 @@ class FirebaseManager {
         auth.signIn(withEmail: email, password: password) { [weak self] result, error in
             if let error {
                 AlertModel.shared.showOkActionAlert(title: "Error", message: error.localizedDescription)
+                return
             }
             self?.isLoggedIn = true
             self?.user = User(email: email)
