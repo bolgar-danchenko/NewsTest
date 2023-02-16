@@ -46,6 +46,7 @@ class ProfileViewController: UIViewController {
         let button = UIButton(type: .system)
         button.setTitleColor(.systemRed, for: .normal)
         button.setTitle("Sign Out", for: .normal)
+        button.addTarget(self, action: #selector(didTapSignOut), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -82,5 +83,10 @@ class ProfileViewController: UIViewController {
             signOutButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             signOutButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -30),
         ])
+    }
+    
+    @objc private func didTapSignOut() {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        self.navigationController?.setViewControllers([vc], animated: true)
     }
 }

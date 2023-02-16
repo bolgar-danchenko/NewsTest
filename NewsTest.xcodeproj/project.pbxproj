@@ -12,6 +12,9 @@
 		B588C0AB299E33CF00D16215 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B588C0AA299E33CF00D16215 /* ProfileViewController.swift */; };
 		B588C0AE299E386E00D16215 /* CustomAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B588C0AD299E386E00D16215 /* CustomAnnotation.swift */; };
 		B59D71AF299E4B0700D52227 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59D71AE299E4B0700D52227 /* PaddingLabel.swift */; };
+		B59D71B1299E4D6100D52227 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59D71B0299E4D6100D52227 /* User.swift */; };
+		B5ADEFAD299E582D00A4A6D6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ADEFAC299E582D00A4A6D6 /* LoginViewController.swift */; };
+		B5ADEFAF299E668900A4A6D6 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ADEFAE299E668900A4A6D6 /* CustomTextField.swift */; };
 		B5F3255E299E184C00420CD5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F3255D299E184C00420CD5 /* AppDelegate.swift */; };
 		B5F32560299E184C00420CD5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F3255F299E184C00420CD5 /* SceneDelegate.swift */; };
 		B5F32562299E184C00420CD5 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F32561299E184C00420CD5 /* NewsViewController.swift */; };
@@ -27,6 +30,9 @@
 		B588C0AA299E33CF00D16215 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		B588C0AD299E386E00D16215 /* CustomAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotation.swift; sourceTree = "<group>"; };
 		B59D71AE299E4B0700D52227 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
+		B59D71B0299E4D6100D52227 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		B5ADEFAC299E582D00A4A6D6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B5ADEFAE299E668900A4A6D6 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		B5F3255A299E184C00420CD5 /* NewsTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F3255D299E184C00420CD5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5F3255F299E184C00420CD5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,6 +60,8 @@
 			children = (
 				B588C0AD299E386E00D16215 /* CustomAnnotation.swift */,
 				B59D71AE299E4B0700D52227 /* PaddingLabel.swift */,
+				B5ADEFAE299E668900A4A6D6 /* CustomTextField.swift */,
+				B59D71B0299E4D6100D52227 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -65,6 +73,7 @@
 				B588C0A6299E33AB00D16215 /* MapViewController.swift */,
 				B588C0A8299E33C500D16215 /* FavoritesViewController.swift */,
 				B588C0AA299E33CF00D16215 /* ProfileViewController.swift */,
+				B5ADEFAC299E582D00A4A6D6 /* LoginViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -180,6 +189,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5ADEFAF299E668900A4A6D6 /* CustomTextField.swift in Sources */,
+				B5ADEFAD299E582D00A4A6D6 /* LoginViewController.swift in Sources */,
 				B5F32562299E184C00420CD5 /* NewsViewController.swift in Sources */,
 				B5F3255E299E184C00420CD5 /* AppDelegate.swift in Sources */,
 				B5F32568299E184C00420CD5 /* NewsTest.xcdatamodeld in Sources */,
@@ -188,6 +199,7 @@
 				B588C0A9299E33C500D16215 /* FavoritesViewController.swift in Sources */,
 				B59D71AF299E4B0700D52227 /* PaddingLabel.swift in Sources */,
 				B5F32560299E184C00420CD5 /* SceneDelegate.swift in Sources */,
+				B59D71B1299E4D6100D52227 /* User.swift in Sources */,
 				B588C0AE299E386E00D16215 /* CustomAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
