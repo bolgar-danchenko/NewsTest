@@ -9,6 +9,13 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
+    var user: User = User(email: "")
+    
+    convenience init(user: User) {
+        self.init()
+        self.user = user
+    }
+    
     private lazy var profileImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "ProfileImage")
@@ -18,7 +25,6 @@ class ProfileViewController: UIViewController {
     
     private lazy var nameLabel: PaddingLabel = {
         let label = PaddingLabel()
-        label.text = "Name"
         label.font = .systemFont(ofSize: 17)
         label.textColor = UIColor(red: 0.235, green: 0.235, blue: 0.263, alpha: 0.6)
         label.textAlignment = .left
@@ -31,7 +37,6 @@ class ProfileViewController: UIViewController {
     
     private lazy var emailLabel: PaddingLabel = {
         let label = PaddingLabel()
-        label.text = "example@mail.ru"
         label.font = .systemFont(ofSize: 17)
         label.textColor = UIColor(red: 0.235, green: 0.235, blue: 0.263, alpha: 0.6)
         label.textAlignment = .left
@@ -54,6 +59,7 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(named: "Background")
+        configure()
     }
     
     override func viewWillLayoutSubviews() {
@@ -85,8 +91,13 @@ class ProfileViewController: UIViewController {
         ])
     }
     
+    private func configure() {
+        nameLabel.text = user.name
+        emailLabel.text = user.email
+    }
+    
     @objc private func didTapSignOut() {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController")
         self.navigationController?.setViewControllers([vc], animated: true)
     }
 }

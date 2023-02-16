@@ -18,6 +18,8 @@
 		B5ADEFB1299E746000A4A6D6 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ADEFB0299E746000A4A6D6 /* ResetPasswordViewController.swift */; };
 		B5ADEFB3299E7D9C00A4A6D6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5ADEFB2299E7D9C00A4A6D6 /* GoogleService-Info.plist */; };
 		B5ADEFB6299E7E0600A4A6D6 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = B5ADEFB5299E7E0600A4A6D6 /* FirebaseAuth */; };
+		B5ADEFB9299E822700A4A6D6 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ADEFB8299E822700A4A6D6 /* FirebaseManager.swift */; };
+		B5ADEFBB299E833200A4A6D6 /* AlertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ADEFBA299E833200A4A6D6 /* AlertModel.swift */; };
 		B5F3255E299E184C00420CD5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F3255D299E184C00420CD5 /* AppDelegate.swift */; };
 		B5F32560299E184C00420CD5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F3255F299E184C00420CD5 /* SceneDelegate.swift */; };
 		B5F32562299E184C00420CD5 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F32561299E184C00420CD5 /* NewsViewController.swift */; };
@@ -38,6 +40,8 @@
 		B5ADEFAE299E668900A4A6D6 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		B5ADEFB0299E746000A4A6D6 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		B5ADEFB2299E7D9C00A4A6D6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B5ADEFB8299E822700A4A6D6 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		B5ADEFBA299E833200A4A6D6 /* AlertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertModel.swift; sourceTree = "<group>"; };
 		B5F3255A299E184C00420CD5 /* NewsTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F3255D299E184C00420CD5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5F3255F299E184C00420CD5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +72,7 @@
 				B59D71AE299E4B0700D52227 /* PaddingLabel.swift */,
 				B5ADEFAE299E668900A4A6D6 /* CustomTextField.swift */,
 				B59D71B0299E4D6100D52227 /* User.swift */,
+				B5ADEFBA299E833200A4A6D6 /* AlertModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -92,6 +97,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		B5ADEFB7299E821B00A4A6D6 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				B5ADEFB8299E822700A4A6D6 /* FirebaseManager.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		B5F32551299E184C00420CD5 = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +126,7 @@
 			children = (
 				B5F3255D299E184C00420CD5 /* AppDelegate.swift */,
 				B5F3255F299E184C00420CD5 /* SceneDelegate.swift */,
+				B5ADEFB7299E821B00A4A6D6 /* Util */,
 				B588C0AC299E385100D16215 /* Model */,
 				B588C0B0299E399300D16215 /* View */,
 				B588C0AF299E398900D16215 /* Controller */,
@@ -206,6 +220,8 @@
 			files = (
 				B5ADEFAF299E668900A4A6D6 /* CustomTextField.swift in Sources */,
 				B5ADEFAD299E582D00A4A6D6 /* LoginViewController.swift in Sources */,
+				B5ADEFB9299E822700A4A6D6 /* FirebaseManager.swift in Sources */,
+				B5ADEFBB299E833200A4A6D6 /* AlertModel.swift in Sources */,
 				B5F32562299E184C00420CD5 /* NewsViewController.swift in Sources */,
 				B5F3255E299E184C00420CD5 /* AppDelegate.swift in Sources */,
 				B5F32568299E184C00420CD5 /* NewsTest.xcdatamodeld in Sources */,

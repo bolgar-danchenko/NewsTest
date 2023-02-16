@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class LoginViewController: UIViewController {
 
@@ -54,16 +55,32 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func didTapButton(_ sender: UIButton) {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
-        self.navigationController?.setViewControllers([vc], animated: true)
+        
+        guard let email = emailField.text,
+              let password = passwordField.text,
+              !email.isEmpty,
+              !password.isEmpty else {
+            AlertModel.shared.showOkActionAlert(title: "Attention", message: "Email and password cannot be empty")
+            return
+        }
+        
+        let user = User(email: email)
+        
+        if !isSignUp {
+            FirebaseManager.shared.login(email: email, password: password) {
+                
+                let vc = ProfileViewController(user: user)
+                self.navigationController?.setViewControllers([vc], animated: true)
+            }
+        } else {
+            FirebaseManager.shared.signUp(email: email, password: password) {
+                let vc = ProfileViewController(user: user)
+                self.navigationController?.setViewControllers([vc], animated: true)
+            }
+        }
     }
 
     @IBAction func didTapSignUpButton(_ sender: UIButton) {
         isSignUp.toggle()
     }
-    
-    @IBAction func didTapResetPassword(_ sender: UIButton) {
-        
-    }
-    
 }

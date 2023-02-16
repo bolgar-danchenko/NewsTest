@@ -10,7 +10,7 @@ import UIKit
 
 struct User {
     let id = UUID().uuidString
-    var name: String
+    var name: String = "User"
     var email: String
     let profileImage = UIImage(named: "ProfileImage")
 }
