@@ -12,6 +12,10 @@ class NewsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        checkAuth()
+    }
+    
+    private func checkAuth() {
         if FirebaseManager.shared.checkAuth() {
             return
         } else {
