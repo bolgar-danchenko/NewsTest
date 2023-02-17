@@ -18,6 +18,8 @@ struct Article: Codable {
     let publishedAt: String?
     
     var count: Int?
+    
+    var isFavorite: Bool = false
 }
 
 struct Source: Codable {
