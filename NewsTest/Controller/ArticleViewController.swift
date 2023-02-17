@@ -1,40 +1,40 @@
 //
-//  NewsTableViewCell.swift
+//  ArticleViewController.swift
 //  NewsTest
 //
-//  Created by Konstantin Bolgar-Danchenko on 16.02.2023.
+//  Created by Konstantin Bolgar-Danchenko on 17.02.2023.
 //
 
 import UIKit
 
-class NewsTableViewCell: UITableViewCell {
+class ArticleViewController: UIViewController {
 
-    static let identifier = "NewsTableViewCell"
+    var article: Article!
     
-    @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var articleImageView: UIImageView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var likeButton: UIButton!
     
-    static func nib() -> UINib {
-        return UINib(nibName: "NewsTableViewCell", bundle: nil)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        configure()
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-        likeButton.setTitle("", for: .normal)
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
+    @IBAction func didTapLikeButton(_ sender: UIButton) {
         
     }
     
-    func configure(with article: Article) {
+    static func show(in viewController: UIViewController, with article: Article) {
+        if let articleController = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "ArticleViewController") as? ArticleViewController {
+            articleController.article = article
+            viewController.navigationController?.pushViewController(articleController, animated: true)
+        }
+    }
+    
+    private func configure() {
         titleLabel.text = article.title
         contentLabel.text = article.content
         
@@ -49,11 +49,8 @@ class NewsTableViewCell: UITableViewCell {
         if let isFavorite = article.isFavorite {
             setupLikeButton(isFavorite: isFavorite)
         }
-    }
-    
-    @IBAction func didTapLikeButton(_ sender: UIButton) {
         
-        
+        likeButton.setTitle("", for: .normal)
     }
     
     private func setupImage(urlString: String) {
@@ -92,4 +89,5 @@ class NewsTableViewCell: UITableViewCell {
             likeButton.setImage(UIImage(systemName: "heart"), for: .normal)
         }
     }
+
 }

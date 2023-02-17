@@ -17,9 +17,7 @@ struct Article: Codable {
     let urlToImage: String?
     let publishedAt: String?
     
-    var count: Int?
-    
-    var isFavorite: Bool = false
+    var isFavorite: Bool?
 }
 
 struct Source: Codable {
