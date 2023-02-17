@@ -9,9 +9,13 @@ import UIKit
 
 class NewsViewController: UIViewController {
 
+    // MARK: - Properties
+    
     private var articles = [Article]()
     
     @IBOutlet weak var tableView: UITableView!
+    
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +29,8 @@ class NewsViewController: UIViewController {
         super.viewWillAppear(animated)
         tableView.reloadData()
     }
+    
+    // MARK: - Private
     
     private func checkAuth() {
         if FirebaseManager.shared.checkAuth() {
@@ -43,7 +49,6 @@ class NewsViewController: UIViewController {
         tableView.dataSource = self
     }
     
-    /// Fetching news at launch and after refreshing
     private func fetchNews() {
         NewsManager.shared.getNews { [weak self] result in
             switch result {
@@ -59,7 +64,7 @@ class NewsViewController: UIViewController {
     }
 }
 
-// MARK: - TableView DataSource & Delegate
+// MARK: - TableView Extensions
 
 extension NewsViewController: UITableViewDataSource, UITableViewDelegate {
     

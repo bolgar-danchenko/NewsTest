@@ -20,8 +20,8 @@ class ProfileViewController: UIViewController {
         return imageView
     }()
     
-    private lazy var nameLabel: PaddingLabel = {
-        let label = PaddingLabel()
+    private lazy var nameLabel: CustomLabel = {
+        let label = CustomLabel()
         label.font = .systemFont(ofSize: 17)
         label.textColor = UIColor(red: 0.235, green: 0.235, blue: 0.263, alpha: 0.6)
         label.textAlignment = .left
@@ -32,8 +32,8 @@ class ProfileViewController: UIViewController {
         return label
     }()
     
-    private lazy var emailLabel: PaddingLabel = {
-        let label = PaddingLabel()
+    private lazy var emailLabel: CustomLabel = {
+        let label = CustomLabel()
         label.font = .systemFont(ofSize: 17)
         label.textColor = UIColor(red: 0.235, green: 0.235, blue: 0.263, alpha: 0.6)
         label.textAlignment = .left
@@ -104,12 +104,6 @@ class ProfileViewController: UIViewController {
         }
     }
     
-    @objc private func didTapSignOut() {
-        AlertModel.shared.showTwoActionAlert(title: "Sign Out", message: "Are you sure you want to sign out?", okAction: "Sign Out", cancelAction: "Cancel") { [weak self] _ in
-            self?.signOut()
-        }
-    }
-    
     private func signOut() {
         FirebaseManager.shared.signOut()
         
@@ -117,5 +111,13 @@ class ProfileViewController: UIViewController {
         let nav = UINavigationController(rootViewController: vc)
         nav.modalPresentationStyle = .fullScreen
         present(nav, animated: true)
+    }
+    
+    // MARK: - Actions
+    
+    @objc private func didTapSignOut() {
+        AlertModel.shared.showActionAlert(title: "Sign Out", message: "Are you sure you want to sign out?", okAction: "Sign Out", cancelAction: "Cancel") { [weak self] _ in
+            self?.signOut()
+        }
     }
 }

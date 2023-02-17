@@ -7,6 +7,7 @@
 
 import UIKit
 
+// This class is used to create custom text fields in LoginViewController
 @IBDesignable
 class CustomTextField: UITextField {
     

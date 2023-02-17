@@ -186,7 +186,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                             <constraint firstItem="Usb-KS-pkr" firstAttribute="bottom" secondItem="lec-Uy-Xbg" secondAttribute="bottom" id="fBt-XZ-9vR"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Favorites" largeTitleDisplayMode="always" id="rAF-7f-3sb"/>
+                    <navigationItem key="navigationItem" title="Favorites" largeTitleDisplayMode="always" id="rAF-7f-3sb">
+                        <barButtonItem key="rightBarButtonItem" title="Remove All" id="8kp-xM-imx">
+                            <color key="tintColor" red="1" green="0.38171961903572083" blue="0.25229591131210327" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="didTapRemoveAll:" destination="mRS-Sp-lKw" id="jGJ-gf-8jB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="lec-Uy-Xbg" id="Ob3-QS-qad"/>
                     </connections>
@@ -295,7 +302,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="didTapButton:" destination="Vcn-Ug-PqV" eventType="touchUpInside" id="jh3-2M-NV8"/>
+                                    <action selector="didTapLogInButton:" destination="Vcn-Ug-PqV" eventType="touchUpInside" id="nJW-5W-eBr"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="D1w-hR-xcL">
@@ -405,7 +412,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="didTapButton:" destination="Vcn-Ug-PqV" eventType="touchUpInside" id="21M-MK-8wT"/>
                                     <action selector="didTapReset:" destination="JTQ-n7-yv3" eventType="touchUpInside" id="UFa-2k-iVw"/>
                                 </connections>
                             </button>
@@ -520,6 +526,17 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
             <point key="canvasLocation" x="1024" y="-744"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="5pd-zI-nDI">
+            <size key="intrinsicContentSize" width="80.666666666666671" height="22"/>
+        </designable>
+        <designable name="PMN-YE-48U">
+            <size key="intrinsicContentSize" width="113.33333333333333" height="21"/>
+        </designable>
+        <designable name="Q86-0i-IeL">
+            <size key="intrinsicContentSize" width="80.666666666666671" height="22"/>
+        </designable>
+    </designables>
     <resources>
         <image name="FavoritesTab" width="30" height="30"/>
         <image name="MapTab" width="30" height="30"/>

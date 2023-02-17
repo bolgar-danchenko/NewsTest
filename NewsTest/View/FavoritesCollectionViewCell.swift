@@ -16,11 +16,6 @@ class FavoritesCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var heartImageView: UIImageView!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-    }
-    
     static func nib() -> UINib {
         return UINib(nibName: "FavoritesCollectionViewCell", bundle: nil)
     }
@@ -41,7 +36,6 @@ class FavoritesCollectionViewCell: UICollectionViewCell {
         if let url = URL(string: urlString) {
             URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
                 guard let data = data, error == nil else { return }
-                
                 DispatchQueue.main.async {
                     self?.articleImageView.image = UIImage(data: data)
                 }

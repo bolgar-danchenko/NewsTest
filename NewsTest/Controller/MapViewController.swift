@@ -19,7 +19,6 @@ class MapViewController: UIViewController {
     }
     
     private func tuneMapView() {
-        
         let centerCoordinates = CLLocationCoordinate2D(latitude: 48.1351, longitude: 11.5820)
         mapView.setRegion(
             MKCoordinateRegion(

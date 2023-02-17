@@ -9,6 +9,8 @@ import UIKit
 
 class ArticleViewController: UIViewController {
 
+    // MARK: - Properties
+    
     var article: Article?
     
     @IBOutlet weak var articleImageView: UIImageView!
@@ -16,6 +18,8 @@ class ArticleViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var likeButton: UIButton!
+    
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,18 +33,6 @@ class ArticleViewController: UIViewController {
         configure()
     }
     
-    @IBAction func didTapLikeButton(_ sender: UIButton) {
-        if let article {
-            if !CoreDataManager.shared.isSaved(article: article) {
-                CoreDataManager.shared.saveArticle(article: article)
-                likeButton.setImage(UIImage(systemName: "heart.fill")?.withTintColor(UIColor(red: 1, green: 0.392, blue: 0.51, alpha: 1), renderingMode: .alwaysOriginal), for: .normal)
-            } else {
-                CoreDataManager.shared.removeArticle(article: article)
-                likeButton.setImage(UIImage(systemName: "heart"), for: .normal)
-            }
-        }
-    }
-    
     static func show(in viewController: UIViewController, with article: Article) {
         if let articleController = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "ArticleViewController") as? ArticleViewController {
             articleController.article = article
@@ -48,8 +40,9 @@ class ArticleViewController: UIViewController {
         }
     }
     
+    // MARK: - Configure
+    
     private func configure() {
-        
         if let article {
             titleLabel.text = article.title
             contentLabel.text = article.content
@@ -65,10 +58,6 @@ class ArticleViewController: UIViewController {
         
         likeButton.setTitle("", for: .normal)
         setupLikeButton()
-        
-//        articleImageView.layer.cornerRadius = 22
-//        articleImageView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
-//        articleImageView.layer.masksToBounds = true
     }
     
     private func setupImage(urlString: String) {
@@ -112,4 +101,17 @@ class ArticleViewController: UIViewController {
         }
     }
 
+    // MARK: - Actions
+    
+    @IBAction func didTapLikeButton(_ sender: UIButton) {
+        if let article {
+            if !CoreDataManager.shared.isSaved(article: article) {
+                CoreDataManager.shared.saveArticle(article: article)
+                likeButton.setImage(UIImage(systemName: "heart.fill")?.withTintColor(UIColor(red: 1, green: 0.392, blue: 0.51, alpha: 1), renderingMode: .alwaysOriginal), for: .normal)
+            } else {
+                CoreDataManager.shared.removeArticle(article: article)
+                likeButton.setImage(UIImage(systemName: "heart"), for: .normal)
+            }
+        }
+    }
 }

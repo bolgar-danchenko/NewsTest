@@ -22,16 +22,6 @@ class NewsTableViewCell: UITableViewCell {
         return UINib(nibName: "NewsTableViewCell", bundle: nil)
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        
-    }
-    
     func configure(with article: Article) {
         titleLabel.text = article.title
         contentLabel.text = article.content
@@ -43,7 +33,7 @@ class NewsTableViewCell: UITableViewCell {
         if let urlString = article.urlToImage {
             setupImage(urlString: urlString)
         }
-        
+    
         setupHeartImage(article: article)
     }
     
@@ -51,7 +41,6 @@ class NewsTableViewCell: UITableViewCell {
         if let url = URL(string: urlString) {
             URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
                 guard let data = data, error == nil else { return }
-                
                 DispatchQueue.main.async {
                     self?.articleImageView.image = UIImage(data: data)
                 }

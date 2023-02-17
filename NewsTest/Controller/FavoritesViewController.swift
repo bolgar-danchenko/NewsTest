@@ -11,6 +11,8 @@ class FavoritesViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,12 +25,31 @@ class FavoritesViewController: UIViewController {
         collectionView.reloadData()
     }
     
+    // MARK: - Layout
+    
     private func tuneCollectionView() {
         collectionView.register(FavoritesCollectionViewCell.nib(), forCellWithReuseIdentifier: FavoritesCollectionViewCell.identifier)
         collectionView.delegate = self
         collectionView.dataSource = self
     }
+    
+    // MARK: - Action
+    
+    @IBAction func didTapRemoveAll(_ sender: Any) {
+        if !CoreDataManager.shared.favoriteArticles.isEmpty {
+            AlertModel.shared.showActionAlert(title: "Are you sure you want to remove all favorites?", message: "This action cannot be undone", okAction: "Remove", cancelAction: "Cancel") { [weak self] _ in
+                DispatchQueue.main.async {
+                    CoreDataManager.shared.removeAllFromCoreData()
+                    self?.collectionView.reloadData()
+                }
+            }
+        } else {
+            AlertModel.shared.showOkAlert(title: "Error", message: "There are no favorites")
+        }
+    }
 }
+
+// MARK: - CollectionView Extensions
 
 extension FavoritesViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     

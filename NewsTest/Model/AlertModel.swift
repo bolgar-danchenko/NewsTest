@@ -5,21 +5,21 @@
 //  Created by Konstantin Bolgar-Danchenko on 16.02.2023.
 //
 
-import Foundation
 import UIKit
 
+// This class is used to show alerts
 class AlertModel {
 
     static let shared = AlertModel()
 
-    func showOkActionAlert(title: String, message: String) {
+    func showOkAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default)
         alert.addAction(okAction)
         UIApplication.topViewController()?.present(alert, animated: true, completion: nil)
     }
 
-    func showTwoActionAlert(title: String, message: String, okAction: String, cancelAction: String, handler: ((UIAlertAction) -> Void)?) {
+    func showActionAlert(title: String, message: String, okAction: String, cancelAction: String, handler: ((UIAlertAction) -> Void)?) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: okAction, style: .destructive, handler: handler)
         let cancelAction = UIAlertAction(title: cancelAction, style: .cancel)
@@ -29,6 +29,7 @@ class AlertModel {
     }
 }
 
+// This extension is used to show alerts everywhere, if UINavigationController is unavailable
 extension UIApplication {
     class func topViewController(controller: UIViewController? = UIApplication.shared.connectedScenes
           .filter({$0.activationState == .foregroundActive})

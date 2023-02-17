@@ -9,7 +9,9 @@ import UIKit
 import FirebaseAuth
 
 class LoginViewController: UIViewController {
-
+    
+    // MARK: - Properties
+    
     private var isSignUp = false {
         didSet {
             setupLayout()
@@ -22,6 +24,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var signUpLabel: UILabel!
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var resetPasswordButton: UIButton!
+    
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +41,8 @@ class LoginViewController: UIViewController {
         super.viewWillDisappear(animated)
         tabBarController?.tabBar.isHidden = false
     }
+    
+    // MARK: - Layout
     
     private func setupLayout() {
         if isSignUp {
@@ -54,13 +60,14 @@ class LoginViewController: UIViewController {
         }
     }
 
-    @IBAction func didTapButton(_ sender: UIButton) {
-        
+    // MARK: - Actions
+    
+    @IBAction func didTapLogInButton(_ sender: UIButton) {
         guard let email = emailField.text,
               let password = passwordField.text,
               !email.isEmpty,
               !password.isEmpty else {
-            AlertModel.shared.showOkActionAlert(title: "Attention", message: "Email and password cannot be empty")
+            AlertModel.shared.showOkAlert(title: "Attention", message: "Email and password cannot be empty")
             return
         }
         
@@ -78,5 +85,4 @@ class LoginViewController: UIViewController {
     @IBAction func didTapSignUpButton(_ sender: UIButton) {
         isSignUp.toggle()
     }
-    
 }

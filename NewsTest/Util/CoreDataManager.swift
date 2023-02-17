@@ -5,7 +5,6 @@
 //  Created by Konstantin Bolgar-Danchenko on 17.02.2023.
 //
 
-import Foundation
 import UIKit
 import CoreData
 
@@ -38,7 +37,6 @@ final class CoreDataManager {
     }
     
     public func saveArticle(article: Article) {
-        
         guard let entityDescription = NSEntityDescription.entity(forEntityName: "FavoriteArticle", in: viewContext) else { return }
         
         appDelegate?.persistentContainer.performBackgroundTask({ [weak self] context in
@@ -66,6 +64,7 @@ final class CoreDataManager {
         
         let fetchRequest = NSFetchRequest<FavoriteArticle>(entityName: "FavoriteArticle")
         fetchRequest.fetchBatchSize = 1
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "timestamp", ascending: false)]
         
         do {
             let results = try viewContext.fetch(fetchRequest)
@@ -100,6 +99,7 @@ final class CoreDataManager {
 
         do {
             try viewContext.execute(deleteRequest)
+            self.fetchSavedArticles()
         } catch let error as NSError {
             print(error.localizedDescription)
         }

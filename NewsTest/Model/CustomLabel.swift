@@ -5,11 +5,11 @@
 //  Created by Konstantin Bolgar-Danchenko on 16.02.2023.
 //
 
-import Foundation
 import UIKit
 
+// This class is used to create custom labels in ProfileViewController
 @IBDesignable
-class PaddingLabel: UILabel {
+class CustomLabel: UILabel {
     var textEdgeInsets = UIEdgeInsets.zero {
         didSet { invalidateIntrinsicContentSize() }
     }

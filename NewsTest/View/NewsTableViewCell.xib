@@ -47,7 +47,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="z13-XD-uxD">
-                                <rect key="frame" x="294" y="144" width="22" height="17"/>
+                                <rect key="frame" x="288" y="144" width="22" height="17"/>
                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="22" id="Bqy-pE-e7H"/>
@@ -88,7 +88,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <constraints>
-                <constraint firstItem="njF-e1-oar" firstAttribute="trailing" secondItem="z13-XD-uxD" secondAttribute="trailing" constant="19" id="h8P-Dn-Muw"/>
+                <constraint firstItem="njF-e1-oar" firstAttribute="trailing" secondItem="z13-XD-uxD" secondAttribute="trailing" constant="25" id="h8P-Dn-Muw"/>
             </constraints>
             <connections>
                 <outlet property="articleImageView" destination="zsF-4Y-sZh" id="etY-vg-wxh"/>
