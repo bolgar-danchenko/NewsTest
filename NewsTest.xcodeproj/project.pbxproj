@@ -26,6 +26,8 @@
 		B5ADEFC5299EB3E600A4A6D6 /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5ADEFC3299EB3E600A4A6D6 /* NewsTableViewCell.xib */; };
 		B5ADEFC7299F96D900A4A6D6 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ADEFC6299F96D900A4A6D6 /* ArticleViewController.swift */; };
 		B5ADEFC9299FCBC600A4A6D6 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ADEFC8299FCBC600A4A6D6 /* CoreDataManager.swift */; };
+		B5ADEFCC299FEF3B00A4A6D6 /* FavoritesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ADEFCA299FEF3B00A4A6D6 /* FavoritesCollectionViewCell.swift */; };
+		B5ADEFCD299FEF3B00A4A6D6 /* FavoritesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5ADEFCB299FEF3B00A4A6D6 /* FavoritesCollectionViewCell.xib */; };
 		B5F3255E299E184C00420CD5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F3255D299E184C00420CD5 /* AppDelegate.swift */; };
 		B5F32560299E184C00420CD5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F3255F299E184C00420CD5 /* SceneDelegate.swift */; };
 		B5F32562299E184C00420CD5 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F32561299E184C00420CD5 /* NewsViewController.swift */; };
@@ -54,6 +56,8 @@
 		B5ADEFC3299EB3E600A4A6D6 /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
 		B5ADEFC6299F96D900A4A6D6 /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
 		B5ADEFC8299FCBC600A4A6D6 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		B5ADEFCA299FEF3B00A4A6D6 /* FavoritesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCollectionViewCell.swift; sourceTree = "<group>"; };
+		B5ADEFCB299FEF3B00A4A6D6 /* FavoritesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoritesCollectionViewCell.xib; sourceTree = "<group>"; };
 		B5F3255A299E184C00420CD5 /* NewsTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F3255D299E184C00420CD5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5F3255F299E184C00420CD5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +113,8 @@
 			children = (
 				B5ADEFC2299EB3E600A4A6D6 /* NewsTableViewCell.swift */,
 				B5ADEFC3299EB3E600A4A6D6 /* NewsTableViewCell.xib */,
+				B5ADEFCA299FEF3B00A4A6D6 /* FavoritesCollectionViewCell.swift */,
+				B5ADEFCB299FEF3B00A4A6D6 /* FavoritesCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -224,6 +230,7 @@
 			files = (
 				B5F3256D299E184D00420CD5 /* LaunchScreen.storyboard in Resources */,
 				B5ADEFB3299E7D9C00A4A6D6 /* GoogleService-Info.plist in Resources */,
+				B5ADEFCD299FEF3B00A4A6D6 /* FavoritesCollectionViewCell.xib in Resources */,
 				B5F3256A299E184D00420CD5 /* Assets.xcassets in Resources */,
 				B5F32565299E184C00420CD5 /* Main.storyboard in Resources */,
 				B5ADEFC5299EB3E600A4A6D6 /* NewsTableViewCell.xib in Resources */,
@@ -251,6 +258,7 @@
 				B588C0A9299E33C500D16215 /* FavoritesViewController.swift in Sources */,
 				B59D71AF299E4B0700D52227 /* PaddingLabel.swift in Sources */,
 				B5ADEFB1299E746000A4A6D6 /* ResetPasswordViewController.swift in Sources */,
+				B5ADEFCC299FEF3B00A4A6D6 /* FavoritesCollectionViewCell.swift in Sources */,
 				B5ADEFC7299F96D900A4A6D6 /* ArticleViewController.swift in Sources */,
 				B5ADEFC1299EAF9600A4A6D6 /* NewsModel.swift in Sources */,
 				B5F32560299E184C00420CD5 /* SceneDelegate.swift in Sources */,

@@ -94,7 +94,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uyW-GM-81L"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="Background"/>
                         <constraints>
                             <constraint firstItem="uyW-GM-81L" firstAttribute="trailing" secondItem="5e4-hH-NTx" secondAttribute="trailing" constant="14" id="14f-p9-aeM"/>
                             <constraint firstItem="z4a-xJ-iDs" firstAttribute="leading" secondItem="uyW-GM-81L" secondAttribute="leading" constant="15" id="3Yb-6w-M8u"/>
@@ -164,14 +164,36 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                     <view key="view" contentMode="scaleToFill" id="Maw-UU-cG5">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="lec-Uy-Xbg">
+                                <rect key="frame" x="15" y="155" width="362" height="614"/>
+                                <color key="backgroundColor" name="Background"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="18" minimumInteritemSpacing="10" id="WW9-h4-JC8">
+                                    <size key="itemSize" width="164" height="191"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Usb-KS-pkr"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="Background"/>
+                        <constraints>
+                            <constraint firstItem="lec-Uy-Xbg" firstAttribute="top" secondItem="Usb-KS-pkr" secondAttribute="top" id="FOM-2B-de8"/>
+                            <constraint firstItem="lec-Uy-Xbg" firstAttribute="leading" secondItem="Usb-KS-pkr" secondAttribute="leading" constant="15" id="Xni-4M-fqK"/>
+                            <constraint firstItem="lec-Uy-Xbg" firstAttribute="trailing" secondItem="Usb-KS-pkr" secondAttribute="trailing" constant="-16" id="eKT-yr-OPH"/>
+                            <constraint firstItem="Usb-KS-pkr" firstAttribute="bottom" secondItem="lec-Uy-Xbg" secondAttribute="bottom" id="fBt-XZ-9vR"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Favorites" id="rAF-7f-3sb"/>
+                    <navigationItem key="navigationItem" title="Favorites" largeTitleDisplayMode="always" id="rAF-7f-3sb"/>
+                    <connections>
+                        <outlet property="collectionView" destination="lec-Uy-Xbg" id="Ob3-QS-qad"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TXa-JQ-Mom" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1950" y="1461"/>
+            <point key="canvasLocation" x="1948.854961832061" y="1460.5633802816901"/>
         </scene>
         <!--Profile-->
         <scene sceneID="KQH-e9-ZSe">

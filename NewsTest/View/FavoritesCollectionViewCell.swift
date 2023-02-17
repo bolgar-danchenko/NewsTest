@@ -1,50 +1,40 @@
 //
-//  NewsTableViewCell.swift
+//  FavoritesCollectionViewCell.swift
 //  NewsTest
 //
-//  Created by Konstantin Bolgar-Danchenko on 16.02.2023.
+//  Created by Konstantin Bolgar-Danchenko on 17.02.2023.
 //
 
 import UIKit
 
-class NewsTableViewCell: UITableViewCell {
+class FavoritesCollectionViewCell: UICollectionViewCell {
 
-    static let identifier = "NewsTableViewCell"
+    static let identifier = "FavoritesCollectionViewCell"
     
-    @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var articleImageView: UIImageView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var heartImageView: UIImageView!
-    
-    static func nib() -> UINib {
-        return UINib(nibName: "NewsTableViewCell", bundle: nil)
-    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
         
     }
     
-    func configure(with article: Article) {
+    static func nib() -> UINib {
+        return UINib(nibName: "FavoritesCollectionViewCell", bundle: nil)
+    }
+    
+    func configure(with article: FavoriteArticle) {
         titleLabel.text = article.title
-        contentLabel.text = article.content
         
-        if let dateString = article.publishedAt {
+        if let dateString = article.dateString {
             dateLabel.text = setupDate(dateString: dateString)
         }
         
-        if let urlString = article.urlToImage {
+        if let urlString = article.imageUrlString {
             setupImage(urlString: urlString)
         }
-        
-        setupHeartImage(article: article)
     }
     
     private func setupImage(urlString: String) {
@@ -74,13 +64,5 @@ class NewsTableViewCell: UITableViewCell {
         dateFormatter.dateStyle = .medium
         
         return dateFormatter.string(from: finalDate)
-    }
-    
-    private func setupHeartImage(article: Article) {
-        if !CoreDataManager.shared.isSaved(article: article) {
-            heartImageView.image = UIImage(systemName: "heart")
-        } else {
-            heartImageView.image = UIImage(systemName: "heart.fill")?.withTintColor(UIColor(red: 1, green: 0.392, blue: 0.51, alpha: 1), renderingMode: .alwaysOriginal)
-        }
     }
 }

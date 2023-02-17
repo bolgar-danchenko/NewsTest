@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="FavoritesCollectionViewCell" customModule="NewsTest" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="164" height="191"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="164" height="191"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZK0-ge-84d">
+                        <rect key="frame" x="0.0" y="0.0" width="164" height="191"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rfA-GU-Jyx">
+                                <rect key="frame" x="0.0" y="0.0" width="164" height="95"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="95" id="VdC-z7-PLa"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3rO-we-Ie9">
+                                <rect key="frame" x="6" y="106" width="33" height="15.666666666666671"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnj-Dc-vvT">
+                                <rect key="frame" x="8" y="129.66666666666666" width="148" height="19.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Ktp-EV-hWn">
+                                <rect key="frame" x="133" y="107" width="22" height="17"/>
+                                <color key="tintColor" red="1" green="0.39215683940000001" blue="0.50980395079999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="44x-XY-sgN"/>
+                                    <constraint firstAttribute="width" constant="22" id="lF2-9v-ayx"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="rfA-GU-Jyx" firstAttribute="leading" secondItem="ZK0-ge-84d" secondAttribute="leading" id="E3K-5r-dfp"/>
+                            <constraint firstAttribute="trailing" secondItem="rfA-GU-Jyx" secondAttribute="trailing" id="Fh5-qJ-YZU"/>
+                            <constraint firstItem="3rO-we-Ie9" firstAttribute="top" secondItem="rfA-GU-Jyx" secondAttribute="bottom" constant="11" id="L2p-je-uza"/>
+                            <constraint firstItem="fnj-Dc-vvT" firstAttribute="top" secondItem="3rO-we-Ie9" secondAttribute="bottom" constant="8" id="Tyi-f1-7Ym"/>
+                            <constraint firstItem="Ktp-EV-hWn" firstAttribute="top" secondItem="rfA-GU-Jyx" secondAttribute="bottom" constant="10" id="aBh-uP-eNR"/>
+                            <constraint firstItem="fnj-Dc-vvT" firstAttribute="leading" secondItem="ZK0-ge-84d" secondAttribute="leading" constant="8" id="sx8-0H-Uei"/>
+                            <constraint firstItem="rfA-GU-Jyx" firstAttribute="top" secondItem="ZK0-ge-84d" secondAttribute="top" id="xZe-Gu-aDM"/>
+                            <constraint firstAttribute="trailing" secondItem="Ktp-EV-hWn" secondAttribute="trailing" constant="9" id="yGn-MI-lY0"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="22"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="ZK0-ge-84d" secondAttribute="trailing" id="HO2-zK-L4e"/>
+                <constraint firstAttribute="trailing" secondItem="fnj-Dc-vvT" secondAttribute="trailing" constant="8" id="dS4-Zp-2gf"/>
+                <constraint firstAttribute="top" secondItem="ZK0-ge-84d" secondAttribute="top" id="gJh-Hn-0SS"/>
+                <constraint firstItem="3rO-we-Ie9" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="6" id="gey-cU-Kvt"/>
+                <constraint firstItem="ZK0-ge-84d" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="o20-9K-oLF"/>
+                <constraint firstAttribute="bottom" secondItem="ZK0-ge-84d" secondAttribute="bottom" id="sii-UJ-I1G"/>
+            </constraints>
+            <size key="customSize" width="164" height="191"/>
+            <connections>
+                <outlet property="articleImageView" destination="rfA-GU-Jyx" id="Dti-3S-raW"/>
+                <outlet property="dateLabel" destination="3rO-we-Ie9" id="iaB-Pg-nzD"/>
+                <outlet property="heartImageView" destination="Ktp-EV-hWn" id="epo-TG-gJc"/>
+                <outlet property="titleLabel" destination="fnj-Dc-vvT" id="QOf-aT-d4N"/>
+            </connections>
+            <point key="canvasLocation" x="225.95419847328245" y="69.366197183098592"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="heart.fill" catalog="system" width="128" height="107"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

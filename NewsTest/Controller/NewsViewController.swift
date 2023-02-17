@@ -21,6 +21,11 @@ class NewsViewController: UIViewController {
         fetchNews()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+    
     private func checkAuth() {
         if FirebaseManager.shared.checkAuth() {
             return
@@ -33,8 +38,6 @@ class NewsViewController: UIViewController {
     }
     
     private func tuneTableView() {
-        
-//        tableView.rowHeight = UITableView.automaticDimension
         tableView.register(NewsTableViewCell.nib(), forCellReuseIdentifier: NewsTableViewCell.identifier)
         tableView.delegate = self
         tableView.dataSource = self
