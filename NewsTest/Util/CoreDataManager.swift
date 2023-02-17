@@ -86,6 +86,7 @@ final class CoreDataManager {
                 if object.url == article.url {
                     viewContext.delete(object)
                     try viewContext.save()
+                    self.fetchSavedArticles()
                 }
             }
         } catch {

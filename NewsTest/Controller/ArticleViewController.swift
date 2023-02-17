@@ -21,6 +21,11 @@ class ArticleViewController: UIViewController {
         super.viewDidLoad()
         
         CoreDataManager.shared.fetchSavedArticles()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         configure()
     }
     
