@@ -9,7 +9,7 @@ import UIKit
 
 class ArticleViewController: UIViewController {
 
-    var article: Article!
+    var article: Article?
     
     @IBOutlet weak var articleImageView: UIImageView!
     @IBOutlet weak var dateLabel: UILabel!
@@ -20,11 +20,20 @@ class ArticleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        CoreDataManager.shared.fetchSavedArticles()
         configure()
     }
     
     @IBAction func didTapLikeButton(_ sender: UIButton) {
-        
+        if let article {
+            if !CoreDataManager.shared.isSaved(article: article) {
+                CoreDataManager.shared.saveArticle(article: article)
+                likeButton.setImage(UIImage(systemName: "heart.fill")?.withTintColor(UIColor(red: 1, green: 0.392, blue: 0.51, alpha: 1), renderingMode: .alwaysOriginal), for: .normal)
+            } else {
+                CoreDataManager.shared.removeArticle(article: article)
+                likeButton.setImage(UIImage(systemName: "heart"), for: .normal)
+            }
+        }
     }
     
     static func show(in viewController: UIViewController, with article: Article) {
@@ -35,22 +44,26 @@ class ArticleViewController: UIViewController {
     }
     
     private func configure() {
-        titleLabel.text = article.title
-        contentLabel.text = article.content
         
-        if let dateString = article.publishedAt {
-            dateLabel.text = setupDate(dateString: dateString)
-        }
-        
-        if let urlString = article.urlToImage {
-            setupImage(urlString: urlString)
-        }
-        
-        if let isFavorite = article.isFavorite {
-            setupLikeButton(isFavorite: isFavorite)
+        if let article {
+            titleLabel.text = article.title
+            contentLabel.text = article.content
+            
+            if let dateString = article.publishedAt {
+                dateLabel.text = setupDate(dateString: dateString)
+            }
+            
+            if let urlString = article.urlToImage {
+                setupImage(urlString: urlString)
+            }
         }
         
         likeButton.setTitle("", for: .normal)
+        setupLikeButton()
+        
+//        articleImageView.layer.cornerRadius = 22
+//        articleImageView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+//        articleImageView.layer.masksToBounds = true
     }
     
     private func setupImage(urlString: String) {
@@ -82,11 +95,15 @@ class ArticleViewController: UIViewController {
         return dateFormatter.string(from: finalDate)
     }
     
-    private func setupLikeButton(isFavorite: Bool) {
-        if isFavorite {
-            likeButton.setImage(UIImage(systemName: "heart.fill")?.withTintColor(UIColor(red: 1, green: 0.392, blue: 0.51, alpha: 1), renderingMode: .alwaysOriginal), for: .normal)
-        } else {
-            likeButton.setImage(UIImage(systemName: "heart"), for: .normal)
+    private func setupLikeButton() {
+        
+        if let article {
+            if !CoreDataManager.shared.isSaved(article: article) {
+                likeButton.setImage(UIImage(systemName: "heart"), for: .normal)
+            } else {
+                likeButton.setImage(UIImage(systemName: "heart.fill")?.withTintColor(UIColor(red: 1, green: 0.392, blue: 0.51, alpha: 1), renderingMode: .alwaysOriginal), for: .normal)
+            }
+            
         }
     }
 

@@ -46,9 +46,9 @@ class NewsTableViewCell: UITableViewCell {
             setupImage(urlString: urlString)
         }
         
-        if let isFavorite = article.isFavorite {
-            setupLikeButton(isFavorite: isFavorite)
-        }
+//        if let isFavorite = article.isFavorite {
+//            setupLikeButton(isFavorite: isFavorite)
+//        }
     }
     
     @IBAction func didTapLikeButton(_ sender: UIButton) {
@@ -85,11 +85,11 @@ class NewsTableViewCell: UITableViewCell {
         return dateFormatter.string(from: finalDate)
     }
     
-    private func setupLikeButton(isFavorite: Bool) {
-        if isFavorite {
-            likeButton.setImage(UIImage(systemName: "heart.fill")?.withTintColor(UIColor(red: 1, green: 0.392, blue: 0.51, alpha: 1), renderingMode: .alwaysOriginal), for: .normal)
-        } else {
-            likeButton.setImage(UIImage(systemName: "heart"), for: .normal)
-        }
-    }
+//    private func setupLikeButton(isFavorite: Bool) {
+//        if isFavorite {
+//            likeButton.setImage(UIImage(systemName: "heart.fill")?.withTintColor(UIColor(red: 1, green: 0.392, blue: 0.51, alpha: 1), renderingMode: .alwaysOriginal), for: .normal)
+//        } else {
+//            likeButton.setImage(UIImage(systemName: "heart"), for: .normal)
+//        }
+//    }
 }

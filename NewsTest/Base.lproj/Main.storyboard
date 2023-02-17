@@ -113,7 +113,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                             <constraint firstItem="281-rN-RgB" firstAttribute="top" secondItem="uyW-GM-81L" secondAttribute="top" id="sRf-0y-Vyf"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Article" id="MCw-rT-9CX"/>
+                    <navigationItem key="navigationItem" title="Article" largeTitleDisplayMode="never" id="MCw-rT-9CX"/>
                     <connections>
                         <outlet property="articleImageView" destination="281-rN-RgB" id="pM1-ws-uRg"/>
                         <outlet property="contentLabel" destination="5e4-hH-NTx" id="GyZ-Ex-ePM"/>
